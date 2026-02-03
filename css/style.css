@@ -246,6 +246,33 @@ section {
   box-shadow: 0 8px 25px rgba(0,0,0,0.4);
 }
 
+/* ===== Gallery Mobile Scroll ===== */
+@media (max-width: 768px) {
+  .gallery {
+    display: flex;
+    overflow-x: auto;
+    gap: 15px;
+    padding: 0 10px;
+    scroll-snap-type: x mandatory; /* optional: snaps each image */
+  }
+
+  .gallery a {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+  }
+
+  .gallery img {
+    height: 200px; /* adjust height for mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery img {
+    height: 150px; /* smaller height for very small phones */
+  }
+}
+
+
 /* ===== Footer ===== */
 footer {
   background-color: #000;
