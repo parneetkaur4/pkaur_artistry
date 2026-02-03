@@ -318,22 +318,46 @@ section {
   box-shadow: 0 10px 30px rgba(0,0,0,0.35);
 }
 
-/* ===== Tablet ===== */
-@media (max-width: 992px) {
-  .gallery {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
+/* ===== Mobile Gallery CSS ===== */
 
-/* ===== Mobile ===== */
-@media (max-width: 600px) {
+/* Tablets & below */
+@media (max-width: 768px) {
   .gallery {
-    grid-template-columns: 1fr; /* ONE image per row */
+    padding: 20px 15px;
+  }
+
+  .gallery-grid {
+    display: flex;
+    flex-direction: column;
     gap: 20px;
   }
 
-  .gallery img {
-    height: 220px;
+  .gallery-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+  .gallery {
+    padding: 15px 10px;
+  }
+
+  .gallery h2 {
+    font-size: 1.6rem;
+    text-align: center;
+  }
+
+  .gallery-grid {
+    gap: 15px;
+  }
+
+  .gallery-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
   }
 }
 
