@@ -292,96 +292,47 @@ section {
   box-shadow: 0 8px 25px rgba(0,0,0,0.4);
 }
 
-/* ===== Gallery Styles ===== */
+/* ===== Gallery Section ===== */
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 25px;
   max-width: 1200px;
-  margin: 0 auto 60px auto;
+  margin: 40px auto 80px;
   padding: 0 20px;
 }
 
+/* Gallery images */
 .gallery img {
   width: 100%;
-  height: 250px;
+  height: 260px;
   object-fit: cover;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
 }
 
+/* Hover effect (desktop only) */
 .gallery img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+  transform: scale(1.04);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
 }
 
-/* ===== Gallery Horizontal Scroll on Mobile ===== */
-@media (max-width: 768px) {
+/* ===== Tablet ===== */
+@media (max-width: 992px) {
   .gallery {
-    display: flex;
-    overflow-x: auto;
-    gap: 15px;
-    padding: 0 10px;
-    scroll-snap-type: x mandatory;
+    grid-template-columns: repeat(2, 1fr);
   }
+}
 
-  .gallery a {
-    flex: 0 0 auto;
-    scroll-snap-align: start;
+/* ===== Mobile ===== */
+@media (max-width: 600px) {
+  .gallery {
+    grid-template-columns: 1fr; /* ONE image per row */
+    gap: 20px;
   }
 
   .gallery img {
-    height: 200px;
+    height: 220px;
   }
-
-  .featured-images {
-    grid-template-columns: 1fr;
-  }
-
-  .hero h2 {
-    font-size: 2rem;
-  }
-
-  .hero p {
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .gallery img {
-    height: 150px;
-  }
-
-  .hero h2 {
-    font-size: 1.6rem;
-  }
-
-  .hero p {
-    font-size: 0.95rem;
-  }
-
-  .dashboard a {
-    padding: 8px 15px;
-    font-size: 0.9rem;
-  }
-}
-
-/* ===== Footer ===== */
-footer {
-  background-color: #000;
-  color: #fff;
-  padding: 18px 0;
-  font-size: 0.9rem;
-  text-align: center;
-}
-
-footer a {
-  color: #fff !important;
-  text-decoration: none;
-}
-
-footer a:hover {
-  color: #ff6f61;
 }
