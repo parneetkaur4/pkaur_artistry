@@ -338,3 +338,100 @@ footer a:hover {
     font-size: 0.9rem;
   }
 }
+
+/* ===== Hero Images Centering ===== */
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  text-align: center;
+}
+
+.hero-text {
+  max-width: 500px;
+}
+
+.hero-images {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.hero-images img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.hero-images img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+/* ===== Footer Links White on All Pages ===== */
+footer a {
+  color: #fff !important; /* ensures visibility */
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #ff6f61;
+}
+
+/* ===== Gallery Horizontal Scroll on Phones ===== */
+@media (max-width: 768px) {
+  .gallery {
+    display: flex;
+    overflow-x: auto;
+    gap: 15px;
+    padding: 0 10px;
+    scroll-snap-type: x mandatory;
+  }
+
+  .gallery a {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+  }
+
+  .gallery img {
+    height: 200px;
+  }
+
+  .featured-images {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero h2 {
+    font-size: 1.8rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery img {
+    height: 150px;
+  }
+
+  .hero h2 {
+    font-size: 1.5rem;
+  }
+
+  .hero p {
+    font-size: 0.95rem;
+  }
+
+  .dashboard a {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+  }
+}
