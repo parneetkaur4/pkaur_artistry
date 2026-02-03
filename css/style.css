@@ -318,18 +318,24 @@ section {
   box-shadow: 0 10px 30px rgba(0,0,0,0.35);
 }
 
-@media (max-width: 768px) {
+/* ===== Tablet ===== */
+@media (max-width: 992px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 
-  body {
-    text-align: center;
+/* ===== Mobile ===== */
+@media (max-width: 600px) {
+  .gallery {
+    grid-template-columns: 1fr; /* ONE image per row */
+    gap: 20px;
   }
 
-  /* Sections spacing like Home/About */
-  section {
-    margin: 30px auto;
-    padding: 0 15px;
+  .gallery img {
+    height: 220px;
   }
-
+}
 
 
 /* ===== Footer ===== */
