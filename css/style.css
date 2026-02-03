@@ -352,9 +352,10 @@ footer a:hover {
   gap: 15px;
 }
 
-.contact-form input,
-.contact-form textarea {
-  padding: 12px;
-  font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 6
+.contact-form input, .contact-form textarea { 
+  padding: 12px; 
+  font-size: 1rem; 
+  border: 1px solid #ccc; 
+  border-radius: 6px; /* add px */ 
+  outline: none; 
+}
