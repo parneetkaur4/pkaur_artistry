@@ -194,7 +194,7 @@ section {
   text-align: left;
 }
 
-.about-art h2 {
+.whar-i-draw h2 {
   font-family: 'Georgia', serif;
   font-size: 2rem;
   color: #000;
@@ -211,40 +211,32 @@ section {
   margin-bottom: 20px;
 }
 
-.about-art ul {
-  list-style-type: none;
+.what-i-draw ul {
+  list-style: none;
   padding-left: 0;
   margin-left: 0;
 }
 
-.about-art ul li {
-  position: relative; 
-  padding-left: 1.2rem; /* space for the bullet */ 
+.what-i-draw ul li {
+  position: relative;
+  padding-left: 1.2rem;
   margin-bottom: 8px;
-  font-size: 1rem; 
+  font-size: 1rem;
   line-height: 1.6;
 }
 
-.about-art a {
+.what-i-draw a {
   color: #ff6f61;
   text-decoration: none;
   font-weight: bold;
   transition: 0.3s;
 }
 
-.about-art a:hover {
+.what-i-draw a:hover {
   text-decoration: underline;
   color: #e55b50;
 }
 
-.about-art ul li::before {
-  color: #ff6f61;
-  content: "•";
-  position: absolute;
-  left: 0;
-  top: 0.2rem;
-  font-size: 1.1rem;
-}
 /* ===== Featured Images ===== */
 .featured-images {
   display: grid;
@@ -294,6 +286,27 @@ section {
   box-shadow: 0 10px 30px rgba(0,0,0,0.35);
 }
 
+/* Tablets */
+@media (max-width: 768px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr); /* 2 per row on tablets */
+    gap: 20px;
+  }
+}
+
+/* Phones */
+@media (max-width: 480px) {
+  .gallery {
+    grid-template-columns: 1fr; /* 1 per row on phones */
+    gap: 15px;
+  }
+
+  .gallery img {
+    height: auto; /* prevents cropping */
+  }
+}
+
+
 /* ===== Footer ===== */
 footer {
   background-color: #000;
@@ -311,6 +324,11 @@ footer a {
 
 footer a:hover {
   color: #ff6f61;
+}
+
+footer a:active,
+footer a:focus {
+  text-decoration: underline;
 }
 
 /* ===== Contact Page ===== */
