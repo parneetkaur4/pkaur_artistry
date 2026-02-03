@@ -14,6 +14,9 @@ header {
   padding: 20px 0;
   width: 100%;
   box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 header h1 {
@@ -84,12 +87,12 @@ nav a:hover {
 }
 
 /* ===== Hero Section ===== */
-/* ===== Hero Section ===== */
 .hero {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  text-align: center;
   background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
   padding: 60px 20px;
   gap: 30px;
@@ -97,7 +100,6 @@ nav a:hover {
 
 .hero-text {
   max-width: 500px;
-  text-align: left;
 }
 
 .hero-text h2 {
@@ -158,7 +160,6 @@ nav a:hover {
   box-shadow: 0 10px 25px rgba(0,0,0,0.3);
 }
 
-
 /* ===== Buttons ===== */
 button, .btn {
   background-color: #000;
@@ -208,7 +209,7 @@ section {
 
 .featured-images img {
   width: 100%;
-  height: 250px;       /* fixed height for uniform look */
+  height: 250px;
   object-fit: cover;
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.2);
@@ -233,7 +234,7 @@ section {
 
 .gallery img {
   width: 100%;
-  height: 250px;     /* same size for all gallery images */
+  height: 250px;
   object-fit: cover;
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.2);
@@ -246,145 +247,7 @@ section {
   box-shadow: 0 8px 25px rgba(0,0,0,0.4);
 }
 
-/* ===== Gallery Mobile Scroll ===== */
-@media (max-width: 768px) {
-  .gallery {
-    display: flex;
-    overflow-x: auto;
-    gap: 15px;
-    padding: 0 10px;
-    scroll-snap-type: x mandatory; /* optional: snaps each image */
-  }
-
-  .gallery a {
-    flex: 0 0 auto;
-    scroll-snap-align: start;
-  }
-
-  .gallery img {
-    height: 200px; /* adjust height for mobile */
-  }
-}
-
-@media (max-width: 480px) {
-  .gallery img {
-    height: 150px; /* smaller height for very small phones */
-  }
-}
-
-
-/* ===== Footer ===== */
-footer {
-  background-color: #000;
-  color: #fff;
-  padding: 18px 0;
-  font-size: 0.9rem;
-}
-
-footer a {
-  color: #fff; /* ensure links visible */
-  text-decoration: none;
-}
-
-footer a:hover {
-  color: #ff6f61;
-}
-
-/* ===== Responsive ===== */
-@media (max-width: 768px) {
-  header h1 {
-    font-size: 2rem;
-  }
-  
-  nav a {
-    margin: 5px;
-    font-size: 1rem;
-  }
-  
-  .hero h2 {
-    font-size: 2rem;
-  }
-  
-  .hero p {
-    font-size: 1rem;
-  }
-  
-  .featured-images img,
-  .gallery img {
-    height: 200px;
-  }
-}
-
-@media (max-width: 480px) {
-  header h1 {
-    font-size: 1.6rem;
-  }
-
-  .hero h2 {
-    font-size: 1.6rem;
-  }
-
-  .hero p {
-    font-size: 0.95rem;
-  }
-
-  .featured-images img,
-  .gallery img {
-    height: 150px;
-  }
-
-  .dashboard a {
-    padding: 8px 15px;
-    font-size: 0.9rem;
-  }
-}
-
-/* ===== Hero Images Centering ===== */
-.hero {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 30px;
-  text-align: center;
-}
-
-.hero-text {
-  max-width: 500px;
-}
-
-.hero-images {
-  display: flex;
-  gap: 15px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.hero-images img {
-  width: 180px;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 12px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.hero-images img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-}
-
-/* ===== Footer Links White on All Pages ===== */
-footer a {
-  color: #fff !important; /* ensures visibility */
-  text-decoration: none;
-}
-
-footer a:hover {
-  color: #ff6f61;
-}
-
-/* ===== Gallery Horizontal Scroll on Phones ===== */
+/* ===== Gallery Horizontal Scroll on Mobile ===== */
 @media (max-width: 768px) {
   .gallery {
     display: flex;
@@ -404,12 +267,11 @@ footer a:hover {
   }
 
   .featured-images {
-    flex-direction: column;
-    align-items: center;
+    grid-template-columns: 1fr;
   }
 
   .hero h2 {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 
   .hero p {
@@ -423,7 +285,7 @@ footer a:hover {
   }
 
   .hero h2 {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
   }
 
   .hero p {
@@ -434,4 +296,21 @@ footer a:hover {
     padding: 8px 15px;
     font-size: 0.9rem;
   }
+}
+
+/* ===== Footer ===== */
+footer {
+  background-color: #000;
+  color: #fff;
+  padding: 18px 0;
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: #fff !important;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #ff6f61;
 }
