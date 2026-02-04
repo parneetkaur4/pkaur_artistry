@@ -1,12 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kainth Artwork Gallery</title>
   <link rel="stylesheet" href="css/style.css">
-</head>
 
+  <!-- Lightbox -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+</head>
+<body>
 
 <header>
   <h1>Kainth Artwork Gallery</h1>
@@ -18,36 +22,57 @@
   </nav>
 </header>
 
-<!-- Gallery Section -->
-<section class="gallery">
-  <a href="images/cartoon_maker.jpeg" target="_blank">
-    <img src="images/cartoon_maker.jpeg" alt="Artwork 1">
-  </a>
-  <a href="images/cute_gurl.jpeg" target="_blank">
-    <img src="images/cute_gurl.jpeg" alt="Artwork 2">
-  </a>
-  <a href="images/dandiya_mandala.jpeg" target="_blank">
-    <img src="images/dandiya_mandala.jpeg" alt="Artwork 3">
-  </a>
-  <a href="images/duck_cartoon.jpeg" target="_blank">
-    <img src="images/duck_cartoon.jpeg" alt="Artwork 4">
-  </a>
-  <a href="images/full_circle_mandala.jpeg" target="_blank">
-    <img src="images/full_circle_mandala.jpeg" alt="Artwork 5">
-  </a>
-  <a href="images/half_mandala.jpeg" target="_blank">
-    <img src="images/half_mandala.jpeg" alt="Artwork 6">
-  </a>
-  <a href="images/hanging_mandala.jpeg" target="_blank">
-    <img src="images/hanging_mandala.jpeg" alt="Artwork 7">
-  </a>
-  <a href="images/silent_girl.jpeg" target="_blank">
-    <img src="images/silent_girl.jpeg" alt="Artwork 9">
-  </a>
-  <a href="images/tatto_idea.jpeg" target="_blank">
-    <img src="images/tatto_idea.jpeg" alt="Artwork 10">
-  </a>
-</section>
+
+<main>
+  <!-- Gallery Section -->
+  <section class="gallery">
+    <div class="gallery-item">
+      <a href="images/cartoon_maker.jpeg" data-lightbox="artwork" data-title="Cartoon Maker">
+        <img src="images/cartoon_maker.jpeg" alt="Cartoon Maker">
+      </a>
+    </div>
+    <div class="gallery-item">
+      <a href="images/cute_gurl.jpeg" data-lightbox="artwork" data-title="Cute Girl Sketch">
+        <img src="images/cute_gurl.jpeg" alt="Cute Girl Sketch">
+      </a>
+    </div>
+    <div class="gallery-item">
+      <a href="images/dandiya_mandala.jpeg" data-lightbox="artwork" data-title="Dandiya Mandala">
+        <img src="images/dandiya_mandala.jpeg" alt="Dandiya Mandala">
+      </a>
+    </div>
+    <div class="gallery-item">
+      <a href="images/duck_cartoon.jpeg" data-lightbox="artwork" data-title="Donald Duck Sketch">
+        <img src="images/duck_cartoon.jpeg" alt="Donald Duck Sketch">
+      </a>
+    </div>
+    <div class="gallery-item">
+      <a href="images/full_circle_mandala.jpeg" data-lightbox="artwork" data-title="Full Circle Mandala">
+        <img src="images/full_circle_mandala.jpeg" alt="Full Circle Mandala">
+      </a>
+    </div>
+    <div class="gallery-item">
+      <a href="images/half_mandala.jpeg" data-lightbox="artwork" data-title="Half Mandala">
+        <img src="images/half_mandala.jpeg" alt="Half Mandala">
+      </a>
+    </div>
+    <div class="gallery-item">
+      <a href="images/hanging_mandala.jpeg" data-lightbox="artwork" data-title="Hanging Mandala">
+        <img src="images/hanging_mandala.jpeg" alt="Hanging Mandala">
+      </a>
+    </div>
+    <div class="gallery-item">
+      <a href="images/silent_girl.jpeg" data-lightbox="artwork" data-title="Silent Girl Sketch">
+        <img src="images/silent_girl.jpeg" alt="Silent Girl Sketch">
+      </a>
+    </div>
+    <div class="gallery-item">
+      <a href="images/tatto_idea.jpeg" data-lightbox="artwork" data-title="Tattoo Design Idea">
+        <img src="images/tatto_idea.jpeg" alt="Tattoo Design Idea">
+      </a>
+    </div>
+  </section>
+</main>
 
 <footer>
   <p>&copy; 2026 Kainth Artwork Gallery | Designed with love for art</p>
