@@ -22,55 +22,78 @@
   </nav>
 </header>
 
-
 <main>
+
+  <!-- FILTER BUTTONS -->
+  <div class="filter-buttons">
+    <button class="filter-btn active" data-category="all">All</button>
+    <button class="filter-btn" data-category="cartoon">Cartoon</button>
+    <button class="filter-btn" data-category="sketch">Sketch</button>
+    <button class="filter-btn" data-category="mandala">Mandala</button>
+    <button class="filter-btn" data-category="tattoo">Tattoo</button>
+  </div>
+
   <!-- Gallery Section -->
   <section class="gallery">
-    <div class="gallery-item">
+
+    <!-- CARTOON -->
+    <div class="gallery-item" data-category="cartoon">
       <a href="images/cartoon_maker.jpeg" data-lightbox="artwork" data-title="Cartoon Maker">
         <img src="images/cartoon_maker.jpeg" alt="Cartoon Maker">
       </a>
     </div>
-    <div class="gallery-item">
-      <a href="images/cute_gurl.jpeg" data-lightbox="artwork" data-title="Cute Girl Sketch">
-        <img src="images/cute_gurl.jpeg" alt="Cute Girl Sketch">
-      </a>
-    </div>
-    <div class="gallery-item">
-      <a href="images/dandiya_mandala.jpeg" data-lightbox="artwork" data-title="Dandiya Mandala">
-        <img src="images/dandiya_mandala.jpeg" alt="Dandiya Mandala">
-      </a>
-    </div>
-    <div class="gallery-item">
+
+    <div class="gallery-item" data-category="cartoon">
       <a href="images/duck_cartoon.jpeg" data-lightbox="artwork" data-title="Donald Duck Sketch">
         <img src="images/duck_cartoon.jpeg" alt="Donald Duck Sketch">
       </a>
     </div>
-    <div class="gallery-item">
-      <a href="images/full_circle_mandala.jpeg" data-lightbox="artwork" data-title="Full Circle Mandala">
-        <img src="images/full_circle_mandala.jpeg" alt="Full Circle Mandala">
+
+    <!-- SKETCH -->
+    <div class="gallery-item" data-category="sketch">
+      <a href="images/cute_gurl.jpeg" data-lightbox="artwork" data-title="Cute Girl Sketch">
+        <img src="images/cute_gurl.jpeg" alt="Cute Girl Sketch">
       </a>
     </div>
-    <div class="gallery-item">
-      <a href="images/half_mandala.jpeg" data-lightbox="artwork" data-title="Half Mandala">
-        <img src="images/half_mandala.jpeg" alt="Half Mandala">
-      </a>
-    </div>
-    <div class="gallery-item">
-      <a href="images/hanging_mandala.jpeg" data-lightbox="artwork" data-title="Hanging Mandala">
-        <img src="images/hanging_mandala.jpeg" alt="Hanging Mandala">
-      </a>
-    </div>
-    <div class="gallery-item">
+
+    <div class="gallery-item" data-category="sketch">
       <a href="images/silent_girl.jpeg" data-lightbox="artwork" data-title="Silent Girl Sketch">
         <img src="images/silent_girl.jpeg" alt="Silent Girl Sketch">
       </a>
     </div>
-    <div class="gallery-item">
+
+    <!-- MANDALA -->
+    <div class="gallery-item" data-category="mandala">
+      <a href="images/dandiya_mandala.jpeg" data-lightbox="artwork" data-title="Dandiya Mandala">
+        <img src="images/dandiya_mandala.jpeg" alt="Dandiya Mandala">
+      </a>
+    </div>
+
+    <div class="gallery-item" data-category="mandala">
+      <a href="images/full_circle_mandala.jpeg" data-lightbox="artwork" data-title="Full Circle Mandala">
+        <img src="images/full_circle_mandala.jpeg" alt="Full Circle Mandala">
+      </a>
+    </div>
+
+    <div class="gallery-item" data-category="mandala">
+      <a href="images/half_mandala.jpeg" data-lightbox="artwork" data-title="Half Mandala">
+        <img src="images/half_mandala.jpeg" alt="Half Mandala">
+      </a>
+    </div>
+
+    <div class="gallery-item" data-category="mandala">
+      <a href="images/hanging_mandala.jpeg" data-lightbox="artwork" data-title="Hanging Mandala">
+        <img src="images/hanging_mandala.jpeg" alt="Hanging Mandala">
+      </a>
+    </div>
+
+    <!-- TATTOO -->
+    <div class="gallery-item" data-category="tattoo">
       <a href="images/tatto_idea.jpeg" data-lightbox="artwork" data-title="Tattoo Design Idea">
         <img src="images/tatto_idea.jpeg" alt="Tattoo Design Idea">
       </a>
     </div>
+
   </section>
 </main>
 
@@ -81,6 +104,29 @@
     <a href="https://www.instagram.com/parneet._igx" target="_blank" style="color:white;">My Personal Profile</a>
   </p>
 </footer>
+
+<!-- FILTER SCRIPT -->
+<script>
+  const buttons = document.querySelectorAll(".filter-btn");
+  const items = document.querySelectorAll(".gallery-item");
+
+  buttons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      document.querySelector(".filter-btn.active").classList.remove("active");
+      btn.classList.add("active");
+
+      const category = btn.getAttribute("data-category");
+
+      items.forEach(item => {
+        if (category === "all" || item.getAttribute("data-category") === category) {
+          item.style.display = "block";
+        } else {
+          item.style.display = "none";
+        }
+      });
+    });
+  });
+</script>
 
 </body>
 </html>
